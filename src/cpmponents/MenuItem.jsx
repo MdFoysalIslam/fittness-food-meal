@@ -8,6 +8,7 @@ function MenuItem({item}) {
         <div>
             <img src={image} alt=''/>
           {name}{price}
+          
         </div>
     );
 };

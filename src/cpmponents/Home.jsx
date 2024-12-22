@@ -5,6 +5,7 @@ import Baner from './Baner';
 import HomeSwiper from './HomeSwiper';
 import ManuCard from './ManuCard';
 import PopularMenu from './PopularMenu';
+import Review from './Review';
 
 
 function Home() {
@@ -14,6 +15,7 @@ function Home() {
       <HomeSwiper/>
       <ManuCard/>
       <PopularMenu/>
+      <Review/>
         </div>
     );
 };
