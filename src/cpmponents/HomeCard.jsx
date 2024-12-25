@@ -9,7 +9,7 @@ function HomeCard() {
     const [menu, setMenu] = React.useState([]);
 
  React.useEffect(()=>{
-    fetch('MenuData.json')
+    fetch('menu.json')
     .then(res => res.json())
     .then(data => setMenu(data))
 
@@ -18,7 +18,7 @@ function HomeCard() {
     return (
        
        <div><h2>
-        Home Cart
+        Home Cart{menu.length}
         </h2></div>
     );
 };

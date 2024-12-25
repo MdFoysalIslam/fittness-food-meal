@@ -3,27 +3,27 @@
 import * as React from 'react';
 import SectionTitle from './SectionTitle';
 import MenuItem from './MenuItem';
+import useMenu from './Hooks/useMenu';
 
 function PopularMenu() {
-    const [menu, setMenu] = React.useState([])
-
-    React.useEffect(()=>{
-        fetch('menu.json')
-        .then(res => res.json())
-        .then(data => {
-            const popularItem = data.filter(item => item.category === 'popular')
-            setMenu(popularItem)
-        })
-    }, [])
+  const [menu] = useMenu()
+  
+  const popular = menu.filter(item => item.category === 'popular')
+ 
+              
+   
     return (
         <div>
-            <SectionTitle
+            <SectionTitle className='mt-12'
                 heading="From our Menu"
                 subHeading='Popular Items'
             ></SectionTitle>
-           {
-            menu.map(item => <MenuItem key={item._id} item={item}></MenuItem>)
-           }
+            <div className='grid md:grid-cols-2 gap-6 mb-8'>
+                {
+                    popular.map(item => <MenuItem key={item._id} item={item}></MenuItem>)
+                }
+            </div>
+           
         </div>
     );
 };
